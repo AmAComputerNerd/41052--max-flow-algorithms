@@ -7,7 +7,7 @@ internal static class Program
     public static void Main()
     {
         var graph = CreateGraph();
-        var algorithm = new Algorithm(graph);
+        var algorithm = new Dinics(graph);
         var maxFlow = algorithm.FindMaxFlow();
         
         Console.WriteLine(maxFlow);

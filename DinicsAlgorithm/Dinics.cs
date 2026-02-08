@@ -2,7 +2,7 @@ using DinicsAlgorithm.Graph;
 
 namespace DinicsAlgorithm;
 
-public class Algorithm(FlowGraph graph)
+public class Dinics(FlowGraph graph)
 {
     public int FindMaxFlow()
     {

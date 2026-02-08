@@ -5,10 +5,8 @@ public class FlowGraph(Node source, Node sink)
     public Node Source { get; } = source;
 
     public Node Sink { get; } = sink;
-    
-    public IReadOnlyCollection<Node> Nodes => _nodes;
-    
-    private readonly Dictionary<Node, List<Edge>> _adjacencyList = new();
+
+    private readonly Dictionary<Node, List<FlowEdge>> _adjacencyList = new();
 
     private readonly HashSet<Node> _nodes = [];
 
@@ -17,8 +15,8 @@ public class FlowGraph(Node source, Node sink)
         AddNode(from);
         AddNode(to);
 
-        var forwardEdge = new Edge(from, to, capacity);
-        var reverseEdge = new Edge(from, to, capacity);
+        var forwardEdge = new FlowEdge(to, capacity);
+        var reverseEdge = new FlowEdge(from, 0);
 
         forwardEdge.ReverseEdge = reverseEdge;
         reverseEdge.ReverseEdge = forwardEdge;
@@ -35,7 +33,7 @@ public class FlowGraph(Node source, Node sink)
         }
     }
 
-    public List<Edge> GetEdges(Node node) => _adjacencyList.TryGetValue(node, out var value) ? value : [];
+    public List<FlowEdge> GetEdges(Node node) => _adjacencyList.TryGetValue(node, out var value) ? value : [];
     
     private void AddNode(Node node)
     {
