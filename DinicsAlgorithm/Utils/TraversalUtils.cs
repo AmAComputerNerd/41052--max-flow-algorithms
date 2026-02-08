@@ -53,7 +53,7 @@ public static class TraversalUtils
                 if (pushedFlow > 0)
                 {
                     edge.Flow += pushedFlow;
-                    edge.ReverseEdge.Flow -= pushedFlow;
+                    edge.ReverseEdge!.Flow -= pushedFlow;
                     nextEdgeIndex[current] = i;
                     return pushedFlow;
                 }

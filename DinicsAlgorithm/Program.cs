@@ -15,25 +15,17 @@ internal static class Program
 
     private static FlowGraph CreateGraph()
     {
-        var source = new Node("S");
-        var sink = new Node("T");
+        var graph = new FlowGraph("S", "T");
         
-        var a = new Node("A");
-        var b = new Node("B");
-        var c = new Node("C");
-        var d = new Node("D");
-        
-        var graph = new FlowGraph(source, sink);
-        
-        graph.AddEdge(source, a, 10);
-        graph.AddEdge(source, b, 10);
-        graph.AddEdge(a, b, 2);
-        graph.AddEdge(a, c, 4);
-        graph.AddEdge(a, d, 8);
-        graph.AddEdge(b, d, 9);
-        graph.AddEdge(c, sink, 10);
-        graph.AddEdge(d, c, 6);
-        graph.AddEdge(d, sink, 10);
+        graph.AddEdge("S", "A", 10);
+        graph.AddEdge("S", "B", 10);
+        graph.AddEdge("A", "B", 2);
+        graph.AddEdge("A", "C", 4);
+        graph.AddEdge("A", "D", 8);
+        graph.AddEdge("B", "D", 9);
+        graph.AddEdge("C", "T", 10);
+        graph.AddEdge("D", "C", 6);
+        graph.AddEdge("D", "T", 10);
 
         return graph;
     }

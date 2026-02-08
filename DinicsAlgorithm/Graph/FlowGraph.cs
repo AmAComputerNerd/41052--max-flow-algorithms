@@ -10,12 +10,6 @@ public class FlowGraph(Node source, Node sink)
     
     private readonly Dictionary<Node, List<Edge>> _adjacencyList = new();
 
-    public void AddNode(Node node)
-    {
-        if (!_nodes.Add(node)) return;
-        _adjacencyList[node] = [];
-    }
-
     private readonly HashSet<Node> _nodes = [];
 
     public void AddEdge(Node from, Node to, int capacity)
@@ -42,4 +36,10 @@ public class FlowGraph(Node source, Node sink)
     }
 
     public List<Edge> GetEdges(Node node) => _adjacencyList.TryGetValue(node, out var value) ? value : [];
+    
+    private void AddNode(Node node)
+    {
+        if (!_nodes.Add(node)) return;
+        _adjacencyList[node] = [];
+    }
 }
