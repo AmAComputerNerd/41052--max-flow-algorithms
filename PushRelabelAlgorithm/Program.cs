@@ -6,6 +6,14 @@ internal static class Program
 {
     public static void Main()
     {
+        var graph = CreateGraph();
+        var algorithm = new PushRelabel(graph);
+        var maxFlow = algorithm.FindMaxFlow();
+
+        Console.WriteLine($"Maximum Flow: {maxFlow}");
+
+        var minCut = algorithm.GetMinCut();
+        Console.WriteLine($"\nMinimum Cut (nodes reachable from source): {string.Join(", ", minCut)}");
     }
 
     private static FlowGraph CreateGraph()

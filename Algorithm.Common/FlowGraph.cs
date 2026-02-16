@@ -34,7 +34,9 @@ public class FlowGraph(Node source, Node sink)
     }
 
     public List<FlowEdge> GetEdges(Node node) => _adjacencyList.TryGetValue(node, out var value) ? value : [];
-    
+
+    public IReadOnlySet<Node> GetNodes() => _nodes;
+
     private void AddNode(Node node)
     {
         if (!_nodes.Add(node)) return;
