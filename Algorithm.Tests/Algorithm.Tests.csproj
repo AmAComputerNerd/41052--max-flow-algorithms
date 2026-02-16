@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DinicsAlgorithm\DinicsAlgorithm.csproj" />
+    <ProjectReference Include="..\\EdmondsKarpAlgorithm\EdmondsKarpAlgorithm.csproj" />
 	<ProjectReference Include="..\PushRelabelAlgorithm\PushRelabelAlgorithm.csproj" />
   </ItemGroup>
 
