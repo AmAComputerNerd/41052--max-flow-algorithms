@@ -56,21 +56,21 @@ namespace EdmondsKarpAlgorithm
             return !augmentingPath.ContainsKey(sink) ? null : augmentingPath;
         }
 
-        private int ComputeBottleneckCapacity(Dictionary<Node, FlowEdge?> parent, Node source, Node sink)
+        private int ComputeBottleneckCapacity(Dictionary<Node, FlowEdge?> augmentingPath, Node source, Node sink)
         {
             int bottleneck = int.MaxValue;
-            for (var v = sink; v != source; v = parent[v]!.ReverseEdge!.To)
+            for (var v = sink; v != source; v = augmentingPath[v]!.ReverseEdge!.To)
             {
-                bottleneck = Math.Min(bottleneck, parent[v]!.ResidualCapacity);
+                bottleneck = Math.Min(bottleneck, augmentingPath[v]!.ResidualCapacity);
             }
             return bottleneck;
         }
 
-        private void UpdateFlow(Dictionary<Node, FlowEdge?> parent, Node source, Node sink, int bottleneck)
+        private void UpdateFlow(Dictionary<Node, FlowEdge?> augmentingPath, Node source, Node sink, int bottleneck)
         {
-            for (var v = sink; v != source; v = parent[v]!.ReverseEdge!.To)
+            for (var v = sink; v != source; v = augmentingPath[v]!.ReverseEdge!.To)
             {
-                var edge = parent[v]!;
+                var edge = augmentingPath[v]!;
                 edge.Flow += bottleneck;
                 edge.ReverseEdge!.Flow -= bottleneck;
             }
