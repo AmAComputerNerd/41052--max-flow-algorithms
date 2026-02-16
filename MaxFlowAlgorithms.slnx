@@ -1,6 +1,11 @@
 <Solution>
-  <Project Path="Algorithm.Tests/Algorithm.Tests.csproj" Id="1450ee4a-5212-a55b-2c2b-a10f92dc58c2" />
+  <Project Path="Algorithm.Common/Algorithm.Common.csproj" Id="562c7030-22ca-414a-811d-b325fde49ad6" />
+  <Project Path="Algorithm.Tests/Algorithm.Tests.csproj" Id="1450ee4a-5212-a55b-2c2b-a10f92dc58c2">
+    <BuildType Project="?" />
+    <Platform Project="?" />
+    <Build Project="false" />
+  </Project>
   <Project Path="DinicsAlgorithm/DinicsAlgorithm.csproj" Id="4fc96cf0-154b-4b45-b559-63421e7897c7" />
   <Project Path="EdmondsKarpAlgorithm/EdmondsKarpAlgorithm.csproj" Id="4048d7e0-da1e-4f6d-8425-cabb93411ee9" />
-  <Project Path="FordFulkersonAlgorithm/FordFulkersonAlgorithm.csproj" Id="11cb77b6-9f34-4c05-9f70-f09269feed7b" />
+  <Project Path="PushRelabelAlgorithm/PushRelabelAlgorithm.csproj" Id="11cb77b6-9f34-4c05-9f70-f09269feed7b" />
 </Solution>

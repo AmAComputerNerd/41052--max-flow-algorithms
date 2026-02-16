@@ -1,4 +1,4 @@
-namespace DinicsAlgorithm.Graph;
+namespace Algorithm.Common;
 
 public class FlowGraph(Node source, Node sink)
 {

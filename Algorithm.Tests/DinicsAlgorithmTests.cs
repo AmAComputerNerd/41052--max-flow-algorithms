@@ -1,5 +1,5 @@
-﻿using DinicsAlgorithm;
-using DinicsAlgorithm.Graph;
+﻿using Algorithm.Common;
+using DinicsAlgorithm;
 
 namespace Algorithm.Tests;
 
