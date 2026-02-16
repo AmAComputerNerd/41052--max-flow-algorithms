@@ -1,10 +1,32 @@
-﻿namespace EdmondsKarpAlgorithm
+﻿using Algorithm.Common;
+
+namespace EdmondsKarpAlgorithm
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            Console.WriteLine("Hello, World!");
+            var graph = CreateGraph();
+            var algorithm = new EdmondsKarp(graph);
+            var maxFlow = algorithm.FindMaxFlow(graph.Source, graph.Sink);
+            Console.WriteLine(maxFlow);
+        }
+
+        private static FlowGraph CreateGraph()
+        {
+            var graph = new FlowGraph("S", "T");
+
+            graph.AddEdge("S", "A", 10);
+            graph.AddEdge("S", "B", 10);
+            graph.AddEdge("A", "B", 2);
+            graph.AddEdge("A", "C", 4);
+            graph.AddEdge("A", "D", 8);
+            graph.AddEdge("B", "D", 9);
+            graph.AddEdge("C", "T", 10);
+            graph.AddEdge("D", "C", 6);
+            graph.AddEdge("D", "T", 10);
+
+            return graph;
         }
     }
 }

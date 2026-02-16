@@ -1,4 +1,4 @@
-﻿using DinicsAlgorithm.Graph;
+﻿using Algorithm.Common;
 
 namespace DinicsAlgorithm;
 
