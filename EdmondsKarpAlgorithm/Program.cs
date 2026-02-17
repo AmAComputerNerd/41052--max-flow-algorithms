@@ -8,7 +8,7 @@ namespace EdmondsKarpAlgorithm
         {
             var graph = CreateGraph();
             var algorithm = new EdmondsKarp(graph);
-            var maxFlow = algorithm.FindMaxFlow(graph.Source, graph.Sink);
+            var maxFlow = algorithm.FindMaxFlow();
             Console.WriteLine(maxFlow);
         }
 

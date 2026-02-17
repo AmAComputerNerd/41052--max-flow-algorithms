@@ -2,7 +2,7 @@ using Algorithm.Common;
 
 namespace PushRelabelAlgorithm;
 
-public class PushRelabel(FlowGraph graph)
+public class PushRelabel(FlowGraph graph) : IMaxFlowAlgorithm
 {
     readonly Dictionary<Node, int> height = [];
     readonly Dictionary<Node, int> excess = [];

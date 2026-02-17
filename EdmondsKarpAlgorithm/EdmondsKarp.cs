@@ -2,7 +2,7 @@
 
 namespace EdmondsKarpAlgorithm
 {
-    public class EdmondsKarp
+    public class EdmondsKarp : IMaxFlowAlgorithm
     {
         private readonly FlowGraph _graph;
 
@@ -11,8 +11,10 @@ namespace EdmondsKarpAlgorithm
             _graph = graph;
         }
 
-        public int FindMaxFlow(Node source, Node sink)
+        public int FindMaxFlow()
         {
+            var source = _graph.Source;
+            var sink = _graph.Sink;
             int maxFlow = 0;
 
             var augmentingPath = FindAugmentingPath(source, sink);
